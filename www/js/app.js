@@ -19,3 +19,7 @@ let app = new Framework7({
 });
 
 let mainView = app.views.create('.view-main');
+
+
+var about, art; 
+about ={"name" : "About", "explanation" : "This application works by augmenting the art work ", "score_card":"Fill up your score card by visiting all the art projects! "}
