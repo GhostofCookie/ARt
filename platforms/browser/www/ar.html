@@ -1,0 +1,19 @@
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.js"></script>
+<body>
+    <a-scene embedded arjs="trackingMethod: best; debugUIEnabled: false" vr-mode-ui="enabled: false">
+
+        <!-- ***Debug*** -->
+        <a-marker preset="hiro">
+            <a-box position="0 0.5 0" color="red"></a-box>
+        </a-marker>
+
+        <!-- Marker 1 -->
+        <a-marker preset="custom" type='pattern' url='markers/pattern-BUFFALO.patt'>
+            <a-box position="0 0.5 0" color="yellow"></a-box>
+        </a-marker>
+
+        <!-- The Camera -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>

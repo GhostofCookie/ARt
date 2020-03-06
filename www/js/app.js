@@ -19,3 +19,4 @@ let app = new Framework7({
 });
 
 let mainView = app.views.create('.view-main');
+
