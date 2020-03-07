@@ -13,15 +13,15 @@
 
         <title>AR</title>
     </head>
-    <body>
+    <body onLoad="displayAbout()">
         <div id="app">
              <!-- Right panel, panel-reveal to show, panel-cover to hide --> 
-             <div class="panel panel-right panel-cover">
-                <div class="content-block">
-                    <div class="name"></div>
-                    <div class="explanation"></div>
-                    <div class ="score_card"></div>
-                </div>
+             <div class="panel panel-right panel-cover panel-init">
+                <div class="block">
+                    <div id="name"></div>
+                    <div id="explanation"></div>
+                    <div id ="score_card"></div>
+               </div>
               </div>
             
             <div class="view view-main">
@@ -33,10 +33,15 @@
                             <div class="navbar-inner">
                                 <div class="left">ARt</div>
                                 <div class="title">Stories for the British Museum</div>
-                                <div class="right"> <i class="f7-icons">menu</i> </div>
+                                <div class="right">
+                                    <a href="#" data-panel=".panel-right" class="panel-open">
+                                        <i class="f7-icons">menu</i> 
+                                    </a> 
+                                </div>
                             </div>
                         </div>
                         
+                        <h1>Hello</h1>
                         <!--
                         <a-scene embedded arjs>
                              Marker 1

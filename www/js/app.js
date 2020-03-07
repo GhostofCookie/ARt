@@ -20,6 +20,14 @@ let app = new Framework7({
 
 let mainView = app.views.create('.view-main');
 
-
-var about, art; 
-about ={"name" : "About", "explanation" : "This application works by augmenting the art work ", "score_card":"Fill up your score card by visiting all the art projects! "}
+function displayAbout(){
+    var about, art;
+    var about_parse, art_parse; 
+    about ='{"name" : "About", "explanation" : "This application works by augmenting the art work ", "score_card":"Fill up your score card by visiting all the art projects! "}';
+    about_parse = JSON.parse(about);
+    
+    document.getElementById("name").innerHTML = about_parse.name;
+    document.getElementById("explanation").innerHTML = about_parse.explanation;
+    document.getElementById("score_card").innerHTML = about_parse.score_card;
+    
+}
