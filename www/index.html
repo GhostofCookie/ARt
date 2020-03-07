@@ -13,10 +13,10 @@
 
         <title>AR</title>
     </head>
-    <body onLoad="displayAbout()">
+    <body onLoad="populatePanel(0)">
         <div id="app">
              <!-- Right panel, panel-reveal to show, panel-cover to hide --> 
-             <div class="panel panel-right panel-cover panel-init">
+             <div class="panel panel-right panel-cover">
                 <div class="block">
                     <div id="name"></div>
                     <div id="explanation"></div>
@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+                        <div id="temp"></div>
                         <h1>Hello</h1>
                         <!--
                         <a-scene embedded arjs>
