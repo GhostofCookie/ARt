@@ -14,11 +14,6 @@ let app = new Framework7({
         {
             path: '/',
             url: 'index.html'
-        },
-        {
-            path: '/timeline/',
-            url: 'timeline.html',
-            keepAlive: false
         }
     ]
 });
