@@ -5,17 +5,44 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <link rel="stylesheet" href="css/framework7.bundle.min.css">
         <link rel="stylesheet" href="css/framework7-icons.css">
-
+         <link rel="stylesheet" type="text/css" href="css/index.css" /> 
+        
         <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 
         <title>AR</title>
     </head>
-    <body>
+    <body onLoad="populatePanel(0)">
         <div id="app">
+             <!-- Right panel, panel-reveal to show, panel-cover to hide --> 
+             <div class="panel panel-right panel-cover">
+                <div class="block">
+                    <div id="name"></div>
+                    <div id="explanation"></div>
+                    <div id ="score_card"></div>
+               </div>
+              </div>
+            
             <div class="view view-main">
                 <div class="page" data-name="home">
                     <!-- Page content -->
                     <div class="page-content">
+
+
+                        <div class="navbar">
+                            <div class="navbar-bg"></div>
+                            <div class="navbar-inner">
+                                <div class="left">ARt</div>
+                                <div class="title">Stories for the British Museum</div>
+                                <div class="right">
+                                    <a href="#" data-panel=".panel-right" class="panel-open">
+                                        <i class="f7-icons">menu</i> 
+                                    </a> 
+                                </div>
+                            </div>
+                        </div>
+                        <div id="temp"></div>
+                        <h1>Hello</h1>
+                        
                         <a class="button link external" href="ar.html">AR</a>
                     </div>
                 </div>
