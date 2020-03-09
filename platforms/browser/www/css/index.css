@@ -1,0 +1,19 @@
+/*App CSS*/
+*{
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+}
+.navbar-inner{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;  
+    margin:auto;
+    justify-items: center;
+   
+}
+
+.navbar .right{
+    padding-right: 17%;
+}

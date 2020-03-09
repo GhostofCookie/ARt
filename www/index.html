@@ -27,7 +27,6 @@
                     <!-- Page content -->
                     <div class="page-content">
 
-
                         <div class="navbar">
                             <div class="navbar-bg"></div>
                             <div class="navbar-inner">
@@ -41,9 +40,14 @@
                             </div>
                         </div>
                         <div id="temp"></div>
-                        <h1>Hello</h1>
+
+                        <!-- AR View-->
+                        <iframe id="ar" src="ar.html" scrolling="no" frameborder="0" style="width: 100%; height: 93.5vh;"></iframe>
                         
-                        <a class="button link external" href="ar.html">AR</a>
+                        <!-- Toggle AR Blur -->
+                        <div id='ar-btn' class="fab fab-right-bottom color-grey">
+                            <a onclick="ToggleAR()"><strong>AR</strong></a>
+                        </div>
                     </div>
                 </div>
             </div>
