@@ -20,11 +20,19 @@ let app = new Framework7({
 
 let mainView = app.views.create('.view-main');
 
+function ToggleAR()
+{
+    let colour = 'color-yellow';
+    if ($('#ar-btn').hasClass(colour))
+        $('#ar-btn').removeClass(colour);
+    else $('#ar-btn').addClass(colour);
 
+    $('#ar').contents().find('#blur').fadeToggle();
+};
+ 
 //Use a redirect similiar to <a href="#" data-panel=".panel-right" class="panel-open"> inorder to open the panel 
 function populatePanel(art_num){
-    var name, explanation, score_card;
-    
+    var name, explanation, score_card;   
     switch(art_num){
         case 1:
             name = "Art1";
@@ -33,17 +41,17 @@ function populatePanel(art_num){
             
             break;
         case 2:
-             name = "Art2";
+            name = "Art2";
             explanation = "Exp2";
             score_card = "Score card";
             break;          
         case 3:
-             name = "Art3";
+            name = "Art3";
             explanation = "Exp3";
             score_card = "Score card";
             break;
         case 4:
-             name = "Art4";
+            name = "Art4";
             explanation = "Exp4";
             score_card = "Score card";
             break;
