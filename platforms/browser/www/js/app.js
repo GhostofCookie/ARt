@@ -20,9 +20,15 @@ let app = new Framework7({
 
 let mainView = app.views.create('.view-main');
 
-$(function(){
-    $('#ar').contents().find('#blur').toggle();
-});
+function ToggleAR()
+{
+    let colour = 'color-yellow';
+    if ($('#ar-btn').hasClass(colour))
+        $('#ar-btn').removeClass(colour);
+    else $('#ar-btn').addClass(colour);
+
+    $('#ar').contents().find('#blur').fadeToggle();
+};
  
 //Use a redirect similiar to <a href="#" data-panel=".panel-right" class="panel-open"> inorder to open the panel 
 function populatePanel(art_num){
