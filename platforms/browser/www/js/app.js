@@ -46,9 +46,15 @@ $(function () {
                     if (this.getAttribute("visited") == undefined) {
                         UpdateScoreCard();
                         this.setAttribute("visited", true);
+                        app.panel.open(document.getElementById("panel"));
                     }
-                    app.panel.open(document.getElementById("panel"));
+                    $('#profile-btn').show();
                 }
+            });
+            
+            markers[i].addEventListener('markerLost', function () {
+                $('#profile-btn').hide();
+                DisplayPanel(JSON.stringify(about));
             });
         }
     });
@@ -56,10 +62,18 @@ $(function () {
 
 /** Toggles the AR button and the "blur" effect. */
 function ToggleAR() {
+    let base_colour = 'color-grey';
     let colour = 'color-yellow';
     if ($('#ar-btn').hasClass(colour))
+    {
         $('#ar-btn').removeClass(colour);
-    else $('#ar-btn').addClass(colour);
+        $('#ar-btn').addClass(base_colour);
+    }
+    else
+    {
+        $('#ar-btn').addClass(colour);
+        $('#ar-btn').removeClass(base_colour);
+    }
 
     $('#ar').contents().find('#blur').fadeToggle();
 };

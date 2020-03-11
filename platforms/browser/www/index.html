@@ -12,7 +12,7 @@
 
         <title>AR</title>
     </head>
-    <body>
+    <body class="color-theme-gray">
         <div id="app">
              <!-- Right panel, panel-reveal to show, panel-cover to hide --> 
              <div id="panel" class="panel panel-right panel-cover">
@@ -23,6 +23,32 @@
                     <div id="score_cards"></div>
                 </div>
             </div>
+            <!-- End Panel -->
+
+            <!-- Profile Page -->
+            <div class="popup popup-about">
+                <div class="navbar">
+                    <div class="navbar-bg"></div>
+                    <div class="navbar-inner">
+                        <div class="left">
+                            <a class="link popup-close" href="#">
+                                <i class="f7-icons">chevron_down</i>
+                            </a>
+                        </div>
+                        <div class="title"><!-- Keep this empty --></div>
+                        <div class="right">
+                            <a href="#" data-panel=".panel-right" class="panel-open link popup-close">
+                                <i class="f7-icons">menu</i> 
+                            </a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="block">
+                  <h3>About</h3>
+                  <p>Lorem ipsum dolor sit amet...</p>
+                </div>
+            </div>
+            <!-- End Profile Page -->
             
             <div class="view view-main">
                 <div class="page" data-name="home">
@@ -48,6 +74,10 @@
                         <!-- Toggle AR Blur -->
                         <div id='ar-btn' class="fab fab-right-top color-grey">
                             <a onclick="ToggleAR()"><strong>AR</strong></a>
+                        </div>
+
+                        <div id='profile-btn' class="fab fab-extended fab-left-bottom color-grey" hidden>
+                            <a class="button popup-open" href="#" data-popup=".popup-about">View Profile</a>
                         </div>
                     </div>
                 </div>
