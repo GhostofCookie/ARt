@@ -2,10 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap: ws: https://ssl.gstatic.com;style-src 'self' 'unsafe-inline' data: blob:;media-src *;img-src 'self' data: content:;script-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <link rel="stylesheet" href="css/framework7.bundle.min.css">
         <link rel="stylesheet" href="css/framework7-icons.css">
-         <link rel="stylesheet" type="text/css" href="css/index.css" /> 
+        <link rel="stylesheet" type="text/css" href="css/index.css" /> 
         
         <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 
@@ -19,11 +20,36 @@
                     <div id="name"></div>
                     <div id="explanation"></div>
                     <div id ="score_card_exp"></div>
-                    <div id="score_cards">
-                       
+                    <div id="score_cards"></div>
+                </div>
+            </div>
+            <!-- End Panel -->
+
+            <!-- Profile Page -->
+            <div class="popup popup-about">
+                <div class="navbar">
+                    <div class="navbar-bg"></div>
+                    <div class="navbar-inner">
+                        <div class="left">
+                            <a class="link popup-close" href="#">
+                                <i class="f7-icons">chevron_down</i>
+                            </a>
+                        </div>
+                        <div class="title"></div>
+                        <div class="right">
+                            <a href="#" data-panel=".panel-right" class="panel-open link popup-close">
+                                <i class="f7-icons">menu</i> 
+                            </a> 
+                        </div>
                     </div>
-               </div>
-              </div>
+                </div>
+                <div class="block">
+                  <h3>About</h3>
+                  <!-- Close Popup -->
+                  <p>Lorem ipsum dolor sit amet...</p>
+                </div>
+            </div>
+            <!-- End Profile Page -->
             
             <div class="view view-main">
                 <div class="page" data-name="home">
@@ -33,7 +59,7 @@
                         <div class="navbar">
                             <div class="navbar-bg"></div>
                             <div class="navbar-inner">
-                                <div class="left">ARt</div>
+                                <div class="left"><img src="images/ARt_logo.svg" width="70"></div>
                                 <div class="title">Stories for the British Museum</div>
                                 <div class="right">
                                     <a href="#" data-panel=".panel-right" class="panel-open">
@@ -42,30 +68,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="temp"></div>
-<<<<<<< HEAD
-                        
-                       
 
                         <!-- AR View-->
-                        <iframe id="ar" src="ar.html" scrolling="no" frameborder="0" style="width: 100%; height: 93.5vh;"></iframe>
+                        <iframe id="ar" src="ar.html" scrolling="no" frameborder="0"></iframe>
                         
-=======
-
-                        <!-- AR View-->
-                        <iframe id="ar" src="ar.html" scrolling="no" frameborder="0" style="width: 100%; height: 93.5vh;"></iframe>
-                        
->>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5
                         <!-- Toggle AR Blur -->
-                        <div id='ar-btn' class="fab fab-right-bottom color-grey">
+                        <div id='ar-btn' class="fab fab-right-top color-grey">
                             <a onclick="ToggleAR()"><strong>AR</strong></a>
+                        </div>
+
+                        <div id='profile-btn' class="fab fab-extended fab-left-bottom color-grey" hidden>
+                            <a class="button popup-open" href="#" data-popup=".popup-about">View Profile</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/framework7.bundle.min.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>

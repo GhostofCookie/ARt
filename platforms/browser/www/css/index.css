@@ -1,39 +1,63 @@
-/*App CSS*/
-*{
-    box-sizing: border-box;
-}
 
-*{
+* {
+    box-sizing: border-box;
     margin: 0;
 }
-.navbar-inner{
+
+/*****************************************************************************/
+/*                                 Main App                                  */
+/*****************************************************************************/
+@font-face {
+    font-family: 'Vibra';
+    src: url('../fonts/VIBRA-Reg.ttf') format('truetype'),
+         url('../fonts/VIBRA-Reg.woff') format('woff');
+}
+
+:root {
+    --f7-font-family:'Vibra', sans-serif !important;
+}
+
+body {
+    overflow: hidden !important;
+}
+
+.navbar-inner {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;  
     margin:auto;
     justify-items: center;
-   
 }
 
-.navbar .right{
+.navbar .right {
     padding-right: 17%;
-<<<<<<< HEAD
 }
 
-#score_cards{
+#ar {
+    width: 100%;
+    height: 100%;
+}
+
+#panel > .block > #name {
+    font-size: 2rem;
+}
+
+/*****************************************************************************/
+/*                               Score cards                                 */
+/*****************************************************************************/
+#score_cards {
     display:flex;
-    
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-.score_card{
-    width:10px;
-    height: 10px;
+.score_card {
+    width:25px;
+    height: 25px;
     background-color: #dddddd;
-    margin: 2px;
-    
+    margin: 5px;
 }
 
-.visited{
+.score_card.visited {
     background-color: #444444;
-=======
->>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5
 }

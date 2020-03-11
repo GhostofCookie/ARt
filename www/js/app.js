@@ -6,7 +6,6 @@
  * Here is where the App is defined in terms of Framework 7. All core methods
  * are created and/or utilized here.
  */
-var score;
 
 let app = new Framework7({
     root: '#app',
@@ -21,127 +20,80 @@ let app = new Framework7({
 
 let mainView = app.views.create('.view-main');
 
-<<<<<<< HEAD
-
 var scoreCounter = 0;
+let about = {
+    "name": "About",
+    "explanation": "Hello and welcome to ARt! The purpose of this app is to help you (the user) explore and experience the art projects created by the Indigneous Art Studio class at the university. Rather than a traditional gallery, many of these projects can be expanded on, and learned about by using this app. By implementing augmented reality into some of the projects themselves, you are able to explore the art from a completely new perspective. To learn about each of the projects, as well as their artist and the inspiration behind the work, simply scan the symbol placed by the piece and you should be able to interact with the information. The creators of this app are part of the Mobile App Development class in the new media department at the university, and come from a variety of majors including new media and computer science . Please keep in mind that we are by no means professionals and that you may run into some glitches while using this app, but we hope this doesn’t hinder your participation! We hope you enjoy the art experience and thank you for being a part of our project!<br><br>Sincerely,<br>Jessica, Kayley, Shaizan, Tomas and Tristan",
+    "score_card" : "Fill up your score card by visiting all the art projects!"
+}
 
+/** Shorthand for document ready event listener. */
 $(function () {
-    populatePanel(0);
+    DisplayPanel(JSON.stringify(about));
 
     let ar = document.getElementById('ar').contentWindow.document;
     $("#ar").on('load', function () {
-        addScoreCards();
-        //var buffalo = ar.getElementById("marker-buffalo");
-        var markers = ar.getElementsByTagName("a-marker");
- var i;
-       for( i=markers.length-1; i>-1; i--){
-                markers[i].addEventListener('markerFound', function () {
-                populatePanel(this.id);
-                if (this.getAttribute("visited") == undefined) {
-                    updateScoreCard();
-                    this.setAttribute("visited", true);
-                }
+        // Populate the score cards.
+        AddScoreCards();
 
-                app.panel.open(document.getElementById("panel"));
+        // Add markerFound events listeners to all the markers.
+        var markers = ar.getElementsByTagName("a-marker");
+        for (var i=markers.length-1; i>-1; i--){
+            markers[i].addEventListener('markerFound', function () {
+                if(!$('#ar').contents().find('#blur').is(":visible"))
+                {
+                    DisplayPanel(this.innerHTML);
+                    if (this.getAttribute("visited") == undefined) {
+                        UpdateScoreCard();
+                        this.setAttribute("visited", true);
+                        app.panel.open(document.getElementById("panel"));
+                    }
+                    $('#profile-btn').show();
+                }
+            });
+            
+            markers[i].addEventListener('markerLost', function () {
+                $('#profile-btn').hide();
+                DisplayPanel(JSON.stringify(about));
             });
         }
-    
     });
-
 });
 
+/** Toggles the AR button and the "blur" effect. */
 function ToggleAR() {
-=======
-function ToggleAR()
-{
->>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5
+    let base_colour = 'color-grey';
     let colour = 'color-yellow';
     if ($('#ar-btn').hasClass(colour))
+    {
         $('#ar-btn').removeClass(colour);
-    else $('#ar-btn').addClass(colour);
-<<<<<<< HEAD
-
-    $('#ar').contents().find('#blur').fadeToggle();
-};
-=======
->>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5
-
-    $('#ar').contents().find('#blur').fadeToggle();
-};
- 
-//Use a redirect similiar to <a href="#" data-panel=".panel-right" class="panel-open"> inorder to open the panel 
-<<<<<<< HEAD
-//art_num is the number of the art piece that we would like to display information about
-function populatePanel(id) {
-    var name, explanation, score_card;
-
-    switch (id) {
-        case "marker-buffalo":
-            name = "Buffalo";
-=======
-function populatePanel(art_num){
-    var name, explanation, score_card;   
-    switch(art_num){
-        case 1:
-            name = "Art1";
->>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5
-            explanation = "Exp1";
-            score_card = "Score card";
-
-            break;
-<<<<<<< HEAD
-        case "marker-bowls":
-            name = "Art2";
-            explanation = "Exp2";
-            score_card = "Score card";
-            break;
-        case "marker-brothers":
-=======
-        case 2:
-            name = "Art2";
-            explanation = "Exp2";
-            score_card = "Score card";
-            break;          
-        case 3:
->>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5
-            name = "Art3";
-            explanation = "Exp3";
-            score_card = "Score card";
-            break;
-        case 4:
-            name = "Art4";
-            explanation = "Exp4";
-            score_card = "Score card";
-            break;
-        case 5:
-            name = "Art5";
-            explanation = "Exp5";
-            score_card = "Score card";
-            break;
-        default:
-            name = "About";
-            explanation = "H";
-            score_card = "Fill up your score card by visiting all the art projects!";
+        $('#ar-btn').addClass(base_colour);
     }
-    displayPanel(name, explanation, score_card);
+    else
+    {
+        $('#ar-btn').addClass(colour);
+        $('#ar-btn').removeClass(base_colour);
+    }
+
+    $('#ar').contents().find('#blur').fadeToggle();
+};
+
+/** Displays the panel with the given JSON injected into the panel.
+ * @params {string} json - The stringified JSON.
+ */
+function DisplayPanel(json) {
+    var panel_disp = JSON.parse(json);
+
+    if (panel_disp.name !== undefined) 
+        document.getElementById("name").innerHTML = panel_disp.name;
+    if (panel_disp.explanation !== undefined) 
+        document.getElementById("explanation").innerHTML = panel_disp.explanation;
+    if (panel_disp.score_card !== undefined) 
+        document.getElementById("score_card_exp").innerHTML = panel_disp.score_card;
 }
 
-function displayPanel(name, explanation, score_card) {
-    var panel_disp;
-
-    panel_disp = JSON.parse(JSON.stringify({
-        "name": name,
-        "explanation": explanation,
-        "score_card": score_card
-    }));
-
-    document.getElementById("name").innerHTML = panel_disp.name;
-    document.getElementById("explanation").innerHTML = panel_disp.explanation;
-    document.getElementById("score_card_exp").innerHTML = panel_disp.score_card;
-    //document.getElementById("score_card").innerHTML = score; 
-}
-
-function addScoreCards() {
+/** Dynamically adds all the Score Cards based on the number of markers. */
+function AddScoreCards() {
     var ar = $('#ar').contents();
     var markers = ar.find("a-marker");
     markers.each(function () {
@@ -149,11 +101,9 @@ function addScoreCards() {
     });
 }
 
-<<<<<<< HEAD
-
-function updateScoreCard() {
-    var sc = $('#score_cards');
-    var score_cards = sc.find(".score_card");
+/** Updates the score cards to show that one has been flipped. */
+function UpdateScoreCard() {
+    var score_cards = $('#score_cards').find(".score_card");
 
     score_cards.each(function () {
         if (!$(this).hasClass("visited")) {
@@ -163,9 +113,6 @@ function updateScoreCard() {
         }
     });
     if(scoreCounter == score_cards.length){
-        alert("Yaay you finished!");
+        alert("Yay you finished!");
     }
 }
-=======
-//TODO: Creae table, use table cell colors for score card
->>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5
