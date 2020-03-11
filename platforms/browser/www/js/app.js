@@ -22,6 +22,7 @@ let app = new Framework7({
 let mainView = app.views.create('.view-main');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 var scoreCounter = 0;
 
@@ -51,6 +52,10 @@ $(function () {
 });
 
 function ToggleAR() {
+=======
+function ToggleAR()
+{
+>>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5
     let colour = 'color-yellow';
     if ($('#ar-btn').hasClass(colour))
         $('#ar-btn').removeClass(colour);
@@ -58,6 +63,7 @@ function ToggleAR() {
 
     $('#ar').contents().find('#blur').fadeToggle();
 };
+<<<<<<< HEAD
 
 //Use a redirect similiar to <a href="#" data-panel=".panel-right" class="panel-open"> inorder to open the panel 
 //art_num is the number of the art piece that we would like to display information about
@@ -77,6 +83,25 @@ function populatePanel(id) {
             score_card = "Score card";
             break;
         case "marker-brothers":
+=======
+ 
+//Use a redirect similiar to <a href="#" data-panel=".panel-right" class="panel-open"> inorder to open the panel 
+function populatePanel(art_num){
+    var name, explanation, score_card;   
+    switch(art_num){
+        case 1:
+            name = "Art1";
+            explanation = "Exp1";
+            score_card = "Score card";
+            
+            break;
+        case 2:
+            name = "Art2";
+            explanation = "Exp2";
+            score_card = "Score card";
+            break;          
+        case 3:
+>>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5
             name = "Art3";
             explanation = "Exp3";
             score_card = "Score card";
@@ -93,6 +118,7 @@ function populatePanel(id) {
             break;
         default:
             name = "About";
+<<<<<<< HEAD
             explanation = "H";
             score_card = "Fill up your score card by visiting all the art projects!";
     }
@@ -147,3 +173,22 @@ function updateScoreCard() {
 
 //TODO: Creae table, use table cell colors for score card
 >>>>>>> 061ff21e520cbc4faf666952964178cf04dd505e
+=======
+            explanation = "This application works by augmenting the art work";
+            score_card = "Fill up your score card by visiting all the art projects!";
+    }
+    displayPanel(name,explanation,score_card); 
+}
+
+function displayPanel(name, explanation, score_card){
+    var panel_disp;
+   
+    panel_disp = JSON.parse( JSON.stringify({"name" : name, "explanation" : explanation, "score_card": score_card}));
+        
+    document.getElementById("name").innerHTML = panel_disp.name;
+    document.getElementById("explanation").innerHTML = panel_disp.explanation;
+    document.getElementById("score_card").innerHTML = panel_disp.score_card; 
+}
+
+//TODO: Creae table, use table cell colors for score card
+>>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5

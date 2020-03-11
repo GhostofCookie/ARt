@@ -21,6 +21,7 @@ let app = new Framework7({
 
 let mainView = app.views.create('.view-main');
 
+<<<<<<< HEAD
 
 var scoreCounter = 0;
 
@@ -50,15 +51,26 @@ $(function () {
 });
 
 function ToggleAR() {
+=======
+function ToggleAR()
+{
+>>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5
     let colour = 'color-yellow';
     if ($('#ar-btn').hasClass(colour))
         $('#ar-btn').removeClass(colour);
     else $('#ar-btn').addClass(colour);
+<<<<<<< HEAD
 
     $('#ar').contents().find('#blur').fadeToggle();
 };
+=======
+>>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5
 
+    $('#ar').contents().find('#blur').fadeToggle();
+};
+ 
 //Use a redirect similiar to <a href="#" data-panel=".panel-right" class="panel-open"> inorder to open the panel 
+<<<<<<< HEAD
 //art_num is the number of the art piece that we would like to display information about
 function populatePanel(id) {
     var name, explanation, score_card;
@@ -66,16 +78,32 @@ function populatePanel(id) {
     switch (id) {
         case "marker-buffalo":
             name = "Buffalo";
+=======
+function populatePanel(art_num){
+    var name, explanation, score_card;   
+    switch(art_num){
+        case 1:
+            name = "Art1";
+>>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5
             explanation = "Exp1";
             score_card = "Score card";
 
             break;
+<<<<<<< HEAD
         case "marker-bowls":
             name = "Art2";
             explanation = "Exp2";
             score_card = "Score card";
             break;
         case "marker-brothers":
+=======
+        case 2:
+            name = "Art2";
+            explanation = "Exp2";
+            score_card = "Score card";
+            break;          
+        case 3:
+>>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5
             name = "Art3";
             explanation = "Exp3";
             score_card = "Score card";
@@ -121,6 +149,7 @@ function addScoreCards() {
     });
 }
 
+<<<<<<< HEAD
 
 function updateScoreCard() {
     var sc = $('#score_cards');
@@ -137,3 +166,6 @@ function updateScoreCard() {
         alert("Yaay you finished!");
     }
 }
+=======
+//TODO: Creae table, use table cell colors for score card
+>>>>>>> 780b73d751a6f370d8b3bf4a922698fd66d4c4f5
