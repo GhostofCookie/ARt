@@ -91,7 +91,7 @@ function populatePanel(id) {
             break;
         default:
             name = "About";
-            explanation = "H";
+            explanation = "Hello and welcome to ARt! The purpose of this app is to help you (the user) explore and experience the art projects created by the Indigneous Art Studio class at the university. Rather than a traditional gallery, many of these projects can be expanded on, and learned about by using this app. By implementing augmented reality into some of the projects themselves, you are able to explore the art from a completely new perspective. To learn about each of the projects, as well as their artist and the inspiration behind the work, simply scan the symbol placed by the piece and you should be able to interact with the information. The creators of this app are part of the Mobile App Development class in the new media department at the university, and come from a variety of majors including new media and computer science . Please keep in mind that we are by no means professionals and that you may run into some glitches while using this app, but we hope this doesn’t hinder your participation! We hope you enjoy the art experience and thank you for being a part of our project! Sincerely, Jessica, Kayley, Shaizan, Tomas and Tristan ";
             score_card = "Fill up your score card by visiting all the art projects!";
     }
     displayPanel(name, explanation, score_card);
@@ -138,9 +138,3 @@ function updateScoreCard() {
     }
 }
 
-
-
-
-
-
-//TODO: Creae table, use table cell colors for score card
