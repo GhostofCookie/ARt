@@ -5,18 +5,58 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <link rel="stylesheet" href="css/framework7.bundle.min.css">
         <link rel="stylesheet" href="css/framework7-icons.css">
-
+         <link rel="stylesheet" type="text/css" href="css/index.css" /> 
+        
         <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 
         <title>AR</title>
     </head>
     <body>
         <div id="app">
+             <!-- Right panel, panel-reveal to show, panel-cover to hide --> 
+             <div id="panel" class="panel panel-right panel-cover">
+                <div class="block">
+                    <div id="name"></div>
+                    <div id="explanation"></div>
+                    <div id ="score_card_exp"></div>
+                    <div id="score_cards">
+                       
+                    </div>
+               </div>
+              </div>
+            
             <div class="view view-main">
                 <div class="page" data-name="home">
                     <!-- Page content -->
                     <div class="page-content">
+<<<<<<< HEAD
                         <a class="button link external" href="ar.html">AR</a>
+=======
+
+                        <div class="navbar">
+                            <div class="navbar-bg"></div>
+                            <div class="navbar-inner">
+                                <div class="left">ARt</div>
+                                <div class="title">Stories for the British Museum</div>
+                                <div class="right">
+                                    <a href="#" data-panel=".panel-right" class="panel-open">
+                                        <i class="f7-icons">menu</i> 
+                                    </a> 
+                                </div>
+                            </div>
+                        </div>
+                        <div id="temp"></div>
+                        
+                       
+
+                        <!-- AR View-->
+                        <iframe id="ar" src="ar.html" scrolling="no" frameborder="0" style="width: 100%; height: 93.5vh;"></iframe>
+                        
+                        <!-- Toggle AR Blur -->
+                        <div id='ar-btn' class="fab fab-right-bottom color-grey">
+                            <a onclick="ToggleAR()"><strong>AR</strong></a>
+                        </div>
+>>>>>>> 061ff21e520cbc4faf666952964178cf04dd505e
                     </div>
                 </div>
             </div>
