@@ -11,14 +11,17 @@
 
         <title>AR</title>
     </head>
-    <body onLoad="populatePanel(0)">
+    <body>
         <div id="app">
              <!-- Right panel, panel-reveal to show, panel-cover to hide --> 
-             <div class="panel panel-right panel-cover">
+             <div id="panel" class="panel panel-right panel-cover">
                 <div class="block">
                     <div id="name"></div>
                     <div id="explanation"></div>
-                    <div id ="score_card"></div>
+                    <div id ="score_card_exp"></div>
+                    <div id="score_cards">
+                       
+                    </div>
                </div>
               </div>
             
@@ -40,6 +43,8 @@
                             </div>
                         </div>
                         <div id="temp"></div>
+                        
+                       
 
                         <!-- AR View-->
                         <iframe id="ar" src="ar.html" scrolling="no" frameborder="0" style="width: 100%; height: 93.5vh;"></iframe>

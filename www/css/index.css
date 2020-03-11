@@ -17,3 +17,20 @@
 .navbar .right{
     padding-right: 17%;
 }
+
+#score_cards{
+    display:flex;
+    
+}
+
+.score_card{
+    width:10px;
+    height: 10px;
+    background-color: #dddddd;
+    margin: 2px;
+    
+}
+
+.visited{
+    background-color: #444444;
+}
