@@ -1,36 +1,74 @@
-/*App CSS*/
-*{
-    box-sizing: border-box;
-}
 
-*{
+* {
+    box-sizing: border-box;
     margin: 0;
 }
-.navbar-inner{
+
+/*****************************************************************************/
+/*                                 Main App                                  */
+/*****************************************************************************/
+@font-face {
+    font-family: 'Vibra';
+    src: url('../fonts/VIBRA-Reg.ttf') format('truetype'),
+         url('../fonts/VIBRA-Reg.woff') format('woff');
+}
+
+:root {
+    --f7-font-family:'Vibra', sans-serif !important;
+}
+
+body {
+    overflow: hidden !important;
+}
+
+.navbar-inner {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;  
     margin:auto;
     justify-items: center;
-   
 }
 
-.navbar .right{
+.navbar .right {
     padding-right: 17%;
 }
 
-#score_cards{
+#ar {
+    width: 88%;
+    height: 86.25%;
+    margin: 6%;
+    padding: 0;
+}
+
+#panel > .block > #name {
+    font-size: 2rem;
+}
+
+.popup.color-grey, .panel.color-grey {
+    background: #DDDDDD !important;
+}
+
+#ar-btn.color-grey, #profile-btn {
+    --f7-fab-bg-color: #DDDDDD !important;
+    --f7-fab-text-color: #444444 !important;
+}
+
+/*****************************************************************************/
+/*                               Score cards                                 */
+/*****************************************************************************/
+#score_cards {
     display:flex;
-    
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-.score_card{
-    width:10px;
-    height: 10px;
-    background-color: #dddddd;
-    margin: 2px;
-    
+.score_card {
+    width:25px;
+    height: 25px;
+    background-color: #AAAAAA;
+    margin: 5px;
 }
 
-.visited{
+.score_card.visited {
     background-color: #444444;
 }
