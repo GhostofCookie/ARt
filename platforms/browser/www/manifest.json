@@ -1,11 +1,11 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "helloworld",
-  "short_name": "helloworld",
+  "name": "ARt",
+  "short_name": "ARt",
   "version": "com.phonegap.helloworld",
-  "description": "A blank PhoneGap app.",
-  "author": "PhoneGap Team",
+  "description": "This application merges augmented reality with art. It's purpose is to provide a different median in which users\r\n\t\tcan explore and experience art.",
+  "author": "The Dream Team",
   "icons": [],
   "start_url": "index.html"
 }
